@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>INFO2180 - Lab 6</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("#btn_search").click(function(){
+                    
+                    $.get('request.php',{q:'definition'},function(data){
+                        alert(data);
+                    });
+                    
+                });
+                
+                
+                
+            });
+        </script>
+        
+    </head>
+    
+    <body>
+        <button type="button" id="btn_search">Search</button>
+    </body>
+</html>
