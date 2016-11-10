@@ -17,10 +17,21 @@
                 
                 $("#btn_getAll").click(function(){
                     
-                    $.get('request.php',{all:true},function(xml){
-                        alert(xml);
+                    $.ajax({
+                            type: "GET",  
+                            url: "request.php",  
+                            data: {q:none, all:true},
+                            dataType: "xml",
+                            async: false,
+                            success: function(xml){
+                                //var data = $('doctor',xml).text();
+                                var data = $(xml).find("description").each(function(){
+                                    $('#result').append($(this));
+                                });
+                                alert(data);
+                            }
+                        
                     });
-                    
                     
                     
                     
